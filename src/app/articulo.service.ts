@@ -25,4 +25,12 @@ httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
+addArticulo(articulo: Articulo): Observable<Articulo> {
+  return this.http.post<Articulo>(this.articulosUrl, articulo, this.httpOptions);
+  // .pipe(
+  //   tap((newHero: Hero) => this.log(`added hero w/ id=${newHero.id}`)),
+  //   catchError(this.handleError<Hero>('addHero'))
+  // );
+}
+
 }

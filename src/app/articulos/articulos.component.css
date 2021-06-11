@@ -43,3 +43,19 @@ table{
     height: 500px;
     margin-left: 200px;
 }
+
+h3{
+    text-align: center;
+}
+
+#formu{
+    margin-left: 580px;
+}
+
+label, input{
+    margin-bottom: 10px;
+}
+
+.add-button{
+    margin-left: 30px;
+}

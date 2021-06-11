@@ -14,4 +14,19 @@
         <button class="edit" title="Editar">Editar</button></td>
     </tr>
 </table>
+<br>
+<h3>Añadir nuevo artículo</h3>
+
+<div id="formu">
+    <label for="name-new-articulo">Nombre del artículo: </label>
+    <input id="name-new-articulo" #articuloName/><br>
+    <label for="precio-new-articulo">Precio del artículo: </label>
+    <input id="precio-new-articulo" #articuloPrecio/><br>
+  
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button class="add-button" (click)="add(articuloName.value, +articuloPrecio.value);">
+      Añadir artículo
+    </button>
+    
+  </div>
 <!-- <a routerLink="/detail/{{articulo.id}}"> -->

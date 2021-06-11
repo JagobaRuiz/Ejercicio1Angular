@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Articulo } from '../articulo';
 import { ArticuloService } from '../articulo.service';
 
@@ -20,4 +21,14 @@ export class ArticulosComponent implements OnInit {
   getArticulos(): void {
     this.articuloService.getArticulos().subscribe(articulos => this.articulos = articulos);
   }
+
+  add(name: string, precio:number): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.articuloService.addArticulo({ name,precio } as Articulo)
+      .subscribe(articulo => {
+        this.articulos.push(articulo);
+      });
+  }
+  
 }
