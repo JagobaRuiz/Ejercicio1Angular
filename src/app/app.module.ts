@@ -8,11 +8,13 @@ import {ArticulosComponent} from './articulos/articulos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { ModificarComponent } from './modificar/modificar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticulosComponent,
+    ModificarComponent,
   ],
   imports: [
     BrowserModule,
