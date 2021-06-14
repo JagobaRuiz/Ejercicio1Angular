@@ -30,5 +30,8 @@ export class ArticulosComponent implements OnInit {
         this.articulos.push(articulo);
       });
   }
-  
+  delete(articulo: Articulo): void {
+    this.articuloService.deleteArticulo(articulo.id).subscribe();
+    this.articulos = this.articulos.filter(h => h !== articulo);
+  }
 }

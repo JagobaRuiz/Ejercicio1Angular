@@ -39,4 +39,14 @@ updateArticulo(articulo: Articulo) {
   return this.http.put(this.articulosUrl, articulo, this.httpOptions);
 }
 
+deleteArticulo(id: number): Observable<Articulo> {
+  const url = `${this.articulosUrl}/${id}`;
+
+  return this.http.delete<Articulo>(url, this.httpOptions)
+  // .pipe(
+  //   tap(_ => this.log(`deleted hero id=${id}`)),
+  //   catchError(this.handleError<Hero>('deleteHero'))
+  // );
+ }
+
 }
