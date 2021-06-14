@@ -1,7 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of, pipe } from 'rxjs';
 import { Articulo } from './articulo';
+import { catchError, map, tap } from 'rxjs/operators';
+import { MensajeService } from './mensaje.service';
+
 
 
 @Injectable({
@@ -11,16 +14,14 @@ export class ArticuloService {
 
 
   private articulosUrl = 'api/articulos';
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private mensajeService: MensajeService) { }
 
   getArticulo(id: number): Observable<Articulo> {
     const url = `${this.articulosUrl}/${id}`;
-    return this.http.get<Articulo>(url);
-    // .pipe(tap(_ => this.log(`fetched hero id=${id}`)),catchError(this.handleError<Hero>(`getHero id=${id}`)));
+    return this.http.get<Articulo>(url).pipe(tap(_ => this.log(`fetched articulo id=${id}`)),catchError(this.handleError<Articulo>(`getArticulo id=${id}`)));
  }
  getArticulos(): Observable<Articulo[]> {
-  return this.http.get<Articulo[]>(this.articulosUrl);
-  // .pipe(catchError(this.handleError<Articulo[]>('getHeroes', [])));
+  return this.http.get<Articulo[]>(this.articulosUrl).pipe(catchError(this.handleError<Articulo[]>('getArticulos', [])));
 }
 
 httpOptions = {
@@ -28,11 +29,10 @@ httpOptions = {
 };
 
 addArticulo(articulo: Articulo): Observable<Articulo> {
-  return this.http.post<Articulo>(this.articulosUrl, articulo, this.httpOptions);
-  // .pipe(
-  //   tap((newHero: Hero) => this.log(`added hero w/ id=${newHero.id}`)),
-  //   catchError(this.handleError<Hero>('addHero'))
-  // );
+  return this.http.post<Articulo>(this.articulosUrl, articulo, this.httpOptions).pipe(
+    tap((newArticulo: Articulo) => this.log(`Articulo añadido con id=${newArticulo.id}`)),
+    catchError(this.handleError<Articulo>('addArticulo'))
+  );
 }
 
 updateArticulo(articulo: Articulo) {
@@ -42,11 +42,29 @@ updateArticulo(articulo: Articulo) {
 deleteArticulo(id: number): Observable<Articulo> {
   const url = `${this.articulosUrl}/${id}`;
 
-  return this.http.delete<Articulo>(url, this.httpOptions)
-  // .pipe(
-  //   tap(_ => this.log(`deleted hero id=${id}`)),
-  //   catchError(this.handleError<Hero>('deleteHero'))
-  // );
+  return this.http.delete<Articulo>(url, this.httpOptions).pipe(tap
+    (_ => this.log(`<id de artículo borrado=${id}`)),
+    catchError(this.handleError<Articulo>('deleteArticulo'))
+  );
  }
+
+ private handleError<T>(operation = 'operation', result?: T) {
+  return (error: any): Observable<T> => {
+
+    // TODO: send the error to remote logging infrastructure
+    console.error(error); // log to console instead
+
+    // TODO: better job of transforming error for user consumption
+    this.log(`${operation} failed: ${error.message}`);
+
+    // Let the app keep running by returning an empty result.
+    return of(result as T);
+  };
+}
+/** Log a HeroService message with the MessageService */
+private log(mensaje: string) {
+  this.mensajeService.add(`HeroService: ${mensaje}`);
+  } 
+
 
 }

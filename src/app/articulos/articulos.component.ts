@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Articulo } from '../articulo';
 import { ArticuloService } from '../articulo.service';
+import { MensajeService } from '../mensaje.service';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class ArticulosComponent implements OnInit {
   articulos: Articulo[] = [];
   selectedArticulo?: Articulo;
 
-  constructor(private articuloService: ArticuloService) { }
+  constructor(private articuloService: ArticuloService, private mensajeService: MensajeService) { }
 
   ngOnInit(): void {
     this.getArticulos();
@@ -33,5 +34,10 @@ export class ArticulosComponent implements OnInit {
   delete(articulo: Articulo): void {
     this.articuloService.deleteArticulo(articulo.id).subscribe();
     this.articulos = this.articulos.filter(h => h !== articulo);
+  }
+
+  onSelect(articulo: Articulo): void {
+    this.selectedArticulo = articulo;
+    this.mensajeService.add(`Id del articulo seleccionado=${articulo.id}`);
   }
 }
