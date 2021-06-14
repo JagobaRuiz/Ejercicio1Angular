@@ -61,9 +61,9 @@ deleteArticulo(id: number): Observable<Articulo> {
     return of(result as T);
   };
 }
-/** Log a HeroService message with the MessageService */
+/** Log a ArticuloService message with the MessageService */
 private log(mensaje: string) {
-  this.mensajeService.add(`HeroService: ${mensaje}`);
+  this.mensajeService.add(`ArticuloService: ${mensaje}`);
   } 
 
 
