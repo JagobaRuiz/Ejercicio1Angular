@@ -8,6 +8,8 @@ import { Articulo } from './articulo';
   providedIn: 'root'
 })
 export class ArticuloService {
+
+
   private articulosUrl = 'api/articulos';
   constructor(private http: HttpClient) { }
 
@@ -31,6 +33,10 @@ addArticulo(articulo: Articulo): Observable<Articulo> {
   //   tap((newHero: Hero) => this.log(`added hero w/ id=${newHero.id}`)),
   //   catchError(this.handleError<Hero>('addHero'))
   // );
+}
+
+updateArticulo(articulo: Articulo) {
+  return this.http.put(this.articulosUrl, articulo, this.httpOptions);
 }
 
 }

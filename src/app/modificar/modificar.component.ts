@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Articulo } from '../articulo';
 import { ArticuloService } from '../articulo.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-modificar',
@@ -19,8 +20,7 @@ export class ModificarComponent implements OnInit {
   }
   save(): void {
     if (this.articulo) {
-      this.articuloService.updateArticulo(this.articulo)
-        .subscribe(() => this.goBack());
+      this.articuloService.updateArticulo(this.articulo).subscribe(() => this.goBack());
     }
   }
   

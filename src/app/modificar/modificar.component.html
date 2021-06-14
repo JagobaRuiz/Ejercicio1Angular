@@ -1,14 +1,14 @@
 <div *ngIf="articulo">
 
     <h2>Editar el artículo: {{articulo.name | uppercase}} </h2>
-    <p>Id: {{articulo.id}}€</p>
+    <p>Id: {{articulo.id}}</p>
     <p>Precio: {{articulo.precio}}€</p>
     <div>
         <label for="articulo-name">Nuevo nombre del producto: </label>
         <input id="articulo-name" [(ngModel)]="articulo.name" placeholder="name">
         <br>
-        <label for="articulo-precio">Nuevo nombre del producto: </label>
-        <input id="articulo-name" [(ngModel)]="articulo.name" placeholder="precio">
+        <label for="articulo-precio">Nuevo precio del producto: </label>
+        <input id="articulo-precio" [(ngModel)]="articulo.precio" placeholder="precio">
         <br>
     </div>
     <button (click)="save()">save</button>
