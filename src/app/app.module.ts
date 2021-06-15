@@ -10,6 +10,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { ModificarComponent } from './modificar/modificar.component';
 import { MensajesComponent } from './mensajes/mensajes.component';
+import { BuscarComponent } from './buscar/buscar.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { MensajesComponent } from './mensajes/mensajes.component';
     ArticulosComponent,
     ModificarComponent,
     MensajesComponent,
+    BuscarComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,7 @@ import { MensajeService } from './mensaje.service';
 })
 export class ArticuloService {
 
+  
 
   private articulosUrl = 'api/articulos';
   constructor(private http: HttpClient, private mensajeService: MensajeService) { }
@@ -21,7 +22,7 @@ export class ArticuloService {
     return this.http.get<Articulo>(url).pipe(tap(_ => this.log(`fetched articulo id=${id}`)),catchError(this.handleError<Articulo>(`getArticulo id=${id}`)));
  }
  getArticulos(): Observable<Articulo[]> {
-  return this.http.get<Articulo[]>(this.articulosUrl).pipe(catchError(this.handleError<Articulo[]>('getArticulos', [])));
+  return this.http.get<Articulo[]>(this.articulosUrl).pipe(tap(_ => this.log(`Todos los artículos`)),catchError(this.handleError<Articulo[]>('getArticulos', [])));
 }
 
 httpOptions = {
@@ -36,14 +37,14 @@ addArticulo(articulo: Articulo): Observable<Articulo> {
 }
 
 updateArticulo(articulo: Articulo) {
+  return this.getArticulos();
   return this.http.put(this.articulosUrl, articulo, this.httpOptions);
 }
 
 deleteArticulo(id: number): Observable<Articulo> {
   const url = `${this.articulosUrl}/${id}`;
-
   return this.http.delete<Articulo>(url, this.httpOptions).pipe(tap
-    (_ => this.log(`<id de artículo borrado=${id}`)),
+    (_ => this.log(`id de artículo borrado=${id}`)),
     catchError(this.handleError<Articulo>('deleteArticulo'))
   );
  }
@@ -66,5 +67,17 @@ private log(mensaje: string) {
   this.mensajeService.add(`ArticuloService: ${mensaje}`);
   } 
 
-
+  searchArticulo(term: string): Observable<Articulo[]> {
+    if (!term.trim()||term ==null || term==""|| term==" "||!term || term == "borrar" || term == "actualizar") {
+      // if not search term, return empty array.
+      term = "hecho";
+      return this.getArticulos();
+    }
+    return this.http.get<Articulo[]>(`${this.articulosUrl}/?name=${term}`).pipe(
+      tap(x => x.length ?
+         this.log(`Artículo(s) encontrado(s) "${term}"`) :
+         this.log(`Artículo(s) no encontrado(s) "${term}"`)),
+      catchError(this.handleError<Articulo[]>('searchArticulos', []))
+    );
+  }
 }

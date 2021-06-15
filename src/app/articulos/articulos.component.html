@@ -1,12 +1,16 @@
+<div id="buscar-component">
+  <label for="search-box">Buscar artículo </label>
+  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
 <table class="articulos">
+  
     <tr>
         <th id="thid">Id</th>
         <th id="thnom">Nombre</th>
         <th  id="thprec">Precio</th>
         <th  id="thopc">Opciones</th>
     </tr>
-   
-    <tr *ngFor="let articulo of articulos">
+
+    <tr *ngFor="let articulo of articulos$ | async">
       <td class="id">{{articulo.id}}</td>
       <td class="nombre">{{articulo.name}}</td>
       <td class="precio">{{articulo.precio}}€</td>
