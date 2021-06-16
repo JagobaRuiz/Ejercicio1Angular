@@ -10,7 +10,7 @@
         <th  id="thopc">Opciones</th>
     </tr>
 
-    <tr *ngFor="let articulo of articulos$ | async">
+    <tr class= "contenido" *ngFor="let articulo of articulos$ | async">
       <td class="id">{{articulo.id}}</td>
       <td class="nombre">{{articulo.name}}</td>
       <td class="precio">{{articulo.precio}}€</td>

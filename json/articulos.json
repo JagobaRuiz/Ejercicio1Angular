@@ -3,11 +3,11 @@
     {
       "id": 1,
       "name": "PowerBank",
-      "precio": 27.5
+      "precio": "15"
     },
     {
       "id": 2,
-      "name": "GTX 2050 4GB",
+      "name": "Tarjeta gráfica",
       "precio": 270
     },
     {
@@ -27,8 +27,8 @@
     },
     {
       "id": 6,
-      "name": "Portátil Gaming HP Pavilion 11062021",
-      "precio": 999
+      "name": "Ordenador Portátil",
+      "precio": "750"
     },
     {
       "id": 7,
@@ -49,6 +49,11 @@
       "id": 10,
       "name": "Impresora",
       "precio": 89
+    },
+    {
+      "name": "aaa",
+      "precio": 12,
+      "id": 11
     }
   ]
 }
