@@ -14,7 +14,7 @@ export class ArticuloService {
 
   
 
-  private articulosUrl = 'api/articulos';
+  private articulosUrl = 'http://localhost:3000/articulos/';
   constructor(private http: HttpClient, private mensajeService: MensajeService) { }
 
   getArticulo(id: number): Observable<Articulo> {
@@ -37,8 +37,7 @@ addArticulo(articulo: Articulo): Observable<Articulo> {
 }
 
 updateArticulo(articulo: Articulo) {
-  return this.getArticulos();
-  return this.http.put(this.articulosUrl, articulo, this.httpOptions);
+  return this.http.put(this.articulosUrl + articulo.id, articulo);
 }
 
 deleteArticulo(id: number): Observable<Articulo> {

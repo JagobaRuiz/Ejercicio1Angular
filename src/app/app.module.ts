@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import {ArticulosComponent} from './articulos/articulos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
+// import { InMemoryDataService } from './in-memory-data.service';
 import { ModificarComponent } from './modificar/modificar.component';
 import { MensajesComponent } from './mensajes/mensajes.component';
 import { BuscarComponent } from './buscar/buscar.component';
@@ -25,9 +25,9 @@ import { BuscarComponent } from './buscar/buscar.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
+    // HttpClientInMemoryWebApiModule.forRoot(
+    //   InMemoryDataService, { dataEncapsulation: false }
+    // )
   ],
   providers: [],
   bootstrap: [AppComponent]
