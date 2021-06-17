@@ -1,7 +1,6 @@
 <div *ngIf="mensajeService.mensajes.length">
 
     <h2>Mensajes</h2>
-    <button class="clear" (click)="mensajeService.clear()">Borrar mensaje</button>
-    <div *ngFor='let mensaje of mensajeService.mensajes'> {{mensaje}} </div>
-
+        <div class="alert alert-{{mensaje.nivel}}" role="alert" *ngFor='let mensaje of mensajeService.mensajes'> {{mensaje.texto}} </div>
+        <button class="btn btn-danger" (click)="mensajeService.limpiar()">Borrar Mensajes</button>
 </div>

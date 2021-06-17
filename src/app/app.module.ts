@@ -11,6 +11,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { ModificarComponent } from './modificar/modificar.component';
 import { MensajesComponent } from './mensajes/mensajes.component';
 import { BuscarComponent } from './buscar/buscar.component';
+import { MensajeModule } from './mensaje.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { BuscarComponent } from './buscar/buscar.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    MensajeModule,
     // HttpClientInMemoryWebApiModule.forRoot(
     //   InMemoryDataService, { dataEncapsulation: false }
     // )

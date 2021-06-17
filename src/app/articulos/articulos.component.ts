@@ -61,7 +61,7 @@ export class ArticulosComponent implements OnInit {
 
   onSelect(articulo: Articulo): void {
     this.selectedArticulo = articulo;
-    this.mensajeService.add(`Id del articulo seleccionado=${articulo.id}`);
+    this.mensajeService.add({texto:`Id del articulo seleccionado=${articulo.id}`,nivel:"info"});
   }
 
   search(term: string): void {

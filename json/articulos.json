@@ -49,6 +49,456 @@
       "id": 10,
       "name": "Impresora",
       "precio": "80"
+    },
+    {
+      "name": "TV",
+      "precio": "120",
+      "id": 11
+    },
+    {
+      "name": "Proyector",
+      "precio": "1200",
+      "id": 12
+    },
+    {
+      "name": "Alfombrilla ratón",
+      "precio": "7",
+      "id": 13
+    },
+    {
+      "name": "Gafas VR",
+      "precio": "200",
+      "id": 14
+    },
+    {
+      "name": "DVD",
+      "precio": "70",
+      "id": 15
+    },
+    {
+      "name": "VHS",
+      "precio": "25",
+      "id": 16
+    },
+    {
+      "name": "Ventilador USB",
+      "precio": "6,95",
+      "id": 17
+    },
+    {
+      "name": "Ventilador USB 2",
+      "precio": "6,95",
+      "id": 18
+    },
+    {
+      "name": "Cámara Reflex",
+      "precio": "400,98",
+      "id": 19
+    },
+    {
+      "name": "Silla Gaming",
+      "precio": "65,37",
+      "id": 20
+    },
+    {
+      "name": "Robot Roomba",
+      "precio": "990,99",
+      "id": 21
+    },
+    {
+      "name": "Raspberry Pi 5 + accesorios",
+      "precio": "60",
+      "id": 22
+    },
+    {
+      "name": "Robot Arduino programable",
+      "precio": "50,32",
+      "id": 23
+    },
+    {
+      "name": "Smart TV 24\"",
+      "precio": "120,12",
+      "id": 24
+    },
+    {
+      "name": "Memoria RAM 8GB",
+      "precio": "40,99",
+      "id": 25
+    },
+    {
+      "name": "Procesador",
+      "precio": "599,99",
+      "id": 26
+    },
+    {
+      "name": "Altavoz",
+      "precio": "24",
+      "id": 27
+    },
+    {
+      "name": "Altavoz bluetooth",
+      "precio": "50",
+      "id": 28
+    },
+    {
+      "name": "Amazon Echo",
+      "precio": "29,99",
+      "id": 29
+    },
+    {
+      "name": "Plancha + tabla de planchar",
+      "precio": "60",
+      "id": 30
+    },
+    {
+      "name": "Lavadora",
+      "precio": "600,50",
+      "id": 31
+    },
+    {
+      "name": "Microondas + horno",
+      "precio": "700,23",
+      "id": 32
+    },
+    {
+      "name": "Nevera",
+      "precio": "200,01",
+      "id": 33
+    },
+    {
+      "name": "Película 1",
+      "precio": "11,99",
+      "id": 34
+    },
+    {
+      "name": "Película 2",
+      "precio": "7,99",
+      "id": 35
+    },
+    {
+      "name": "Película 3",
+      "precio": "8,99",
+      "id": 36
+    },
+    {
+      "name": "CD 1",
+      "precio": "10,99",
+      "id": 37
+    },
+    {
+      "name": "CD 2",
+      "precio": "14,99",
+      "id": 38
+    },
+    {
+      "name": "CD 3",
+      "precio": 12,
+      "id": 39
+    },
+    {
+      "name": "Aspiradora",
+      "precio": "20,99",
+      "id": 40
+    },
+    {
+      "name": "Micro SD 128GB",
+      "precio": "29,99",
+      "id": 41
+    },
+    {
+      "name": "Smarthpone gama media",
+      "precio": "169,99",
+      "id": 42
+    },
+    {
+      "name": "Smartphone gama alta",
+      "precio": "400,99",
+      "id": 43
+    },
+    {
+      "name": "Google Home",
+      "precio": "39,99",
+      "id": 44
+    },
+    {
+      "name": "Lavavajillas",
+      "precio": "299,99",
+      "id": 45
+    },
+    {
+      "name": "Estufa",
+      "precio": "15,99",
+      "id": 46
+    },
+    {
+      "name": "Aire acondicionado",
+      "precio": "235,89",
+      "id": 47
+    },
+    {
+      "name": "Cable HDMI",
+      "precio": "4,99",
+      "id": 48
+    },
+    {
+      "name": "Cable Micro USB",
+      "precio": "4",
+      "id": 49
+    },
+    {
+      "name": "Cable USB tipo C",
+      "precio": "4,99",
+      "id": 50
+    },
+    {
+      "name": "Adaptador micro USB- USB tipo C",
+      "precio": "2,99",
+      "id": 51
+    },
+    {
+      "name": "Regleta",
+      "precio": "7,99",
+      "id": 52
+    },
+    {
+      "name": "24 Pilas",
+      "precio": "3,99",
+      "id": 53
+    },
+    {
+      "name": "Bombilla",
+      "precio": "2",
+      "id": 54
+    },
+    {
+      "name": "Licencia antivirus 1",
+      "precio": "24,99",
+      "id": 55
+    },
+    {
+      "name": "Licencia antivirus 2",
+      "precio": "17,99",
+      "id": 56
+    },
+    {
+      "name": "Licencia antivirus 3",
+      "precio": "70,99",
+      "id": 57
+    },
+    {
+      "name": "Licencia programa 1",
+      "precio": "50,99",
+      "id": 58
+    },
+    {
+      "name": "Licencia programa 2",
+      "precio": "90,88",
+      "id": 59
+    },
+    {
+      "name": "Licencia programa 3",
+      "precio": "200,01",
+      "id": 60
+    },
+    {
+      "name": "iPhone",
+      "precio": "799,99",
+      "id": 61
+    },
+    {
+      "name": "iPad",
+      "precio": "399,99",
+      "id": 62
+    },
+    {
+      "name": "Tablet",
+      "precio": "80,99",
+      "id": 63
+    },
+    {
+      "name": "Secador",
+      "precio": "10,01",
+      "id": 64
+    },
+    {
+      "name": "Secadora de ropa",
+      "precio": "12,77",
+      "id": 65
+    },
+    {
+      "name": "PC Gaming",
+      "precio": "799,99",
+      "id": 66
+    },
+    {
+      "name": "Cepillo de dientes eléctrico",
+      "precio": "20,99",
+      "id": 67
+    },
+    {
+      "name": "Satisfyer masculino",
+      "precio": "54,99",
+      "id": 68
+    },
+    {
+      "name": "Satisfyer femenino",
+      "precio": "55",
+      "id": 69
+    },
+    {
+      "name": "Dron",
+      "precio": "69,99",
+      "id": 70
+    },
+    {
+      "name": "Ratón gaming",
+      "precio": "30,77",
+      "id": 71
+    },
+    {
+      "name": "Caramelos",
+      "precio": "3",
+      "id": 72
+    },
+    {
+      "name": "Disco duro externo",
+      "precio": "50,99",
+      "id": 73
+    },
+    {
+      "name": "Aspersor citronela",
+      "precio": "5,99",
+      "id": 74
+    },
+    {
+      "name": "PS4",
+      "precio": "200,90",
+      "id": 75
+    },
+    {
+      "name": "Mando PS4",
+      "precio": "50,99",
+      "id": 76
+    },
+    {
+      "name": "Juego PS4 1",
+      "precio": "18,22",
+      "id": 77
+    },
+    {
+      "name": "Juego PS4 2",
+      "precio": "39,99",
+      "id": 78
+    },
+    {
+      "name": "Juego PS4 3",
+      "precio": "59,98",
+      "id": 79
+    },
+    {
+      "name": "XBox One",
+      "precio": "299,99",
+      "id": 80
+    },
+    {
+      "name": "Juego XBox One 1",
+      "precio": "39,99",
+      "id": 81
+    },
+    {
+      "name": "Juego XBox One 2",
+      "precio": "44,33",
+      "id": 82
+    },
+    {
+      "name": "Juego XBox One 3",
+      "precio": "26,44",
+      "id": 83
+    },
+    {
+      "name": "Mando XBox One",
+      "precio": "25,77",
+      "id": 84
+    },
+    {
+      "name": "Nintendo Switch",
+      "precio": "299,99",
+      "id": 85
+    },
+    {
+      "name": "Juego Nintendo Switch 1",
+      "precio": "44,99",
+      "id": 86
+    },
+    {
+      "name": "Juego Nintendo Switch 2",
+      "precio": "55,77",
+      "id": 87
+    },
+    {
+      "name": "Juego Nintendo Switch 3",
+      "precio": "60,11",
+      "id": 88
+    },
+    {
+      "name": "Mando Nintendo Switch",
+      "precio": "30",
+      "id": 89
+    },
+    {
+      "name": "JoyCon Nintendo Switch",
+      "precio": "60",
+      "id": 90
+    },
+    {
+      "name": "Nintendo Switch Lite",
+      "precio": "199,99",
+      "id": 91
+    },
+    {
+      "name": "DLC juego 1",
+      "precio": "18",
+      "id": 92
+    },
+    {
+      "name": "DLC juego 2",
+      "precio": "20",
+      "id": 93
+    },
+    {
+      "name": "DLC juego 3",
+      "precio": "30",
+      "id": 94
+    },
+    {
+      "name": "Funda Nintendo Switch",
+      "precio": "10",
+      "id": 95
+    },
+    {
+      "name": "Pack experiencias",
+      "precio": "29",
+      "id": 96
+    },
+    {
+      "name": "Mesa de mezclas",
+      "precio": "320",
+      "id": 97
+    },
+    {
+      "name": "PS5",
+      "precio": "333",
+      "id": 98
+    },
+    {
+      "name": "Bolsa plástico",
+      "precio": "0,02",
+      "id": 99
+    },
+    {
+      "name": "Corazón de Valentina <3",
+      "precio": "NO TIENE PRECIO",
+      "id": 100
     }
   ]
 }

@@ -19,10 +19,19 @@ export class ArticuloService {
 
   getArticulo(id: number): Observable<Articulo> {
     const url = `${this.articulosUrl}/${id}`;
-    return this.http.get<Articulo>(url).pipe(tap(_ => this.log(`fetched articulo id=${id}`)),catchError(this.handleError<Articulo>(`getArticulo id=${id}`)));
+    return this.http.get<Articulo>(url).pipe(
+      tap(_ => this.mensajeService.add({texto: `Obtenido el articulo con la id ${id}`, nivel:"success"})),
+    catchError(()=>{this.mensajeService.add({texto:`Error al obtener algún producto con la id ${id}`, nivel:"danger"})
+  return [];
+ }));
+
  }
  getArticulos(): Observable<Articulo[]> {
-  return this.http.get<Articulo[]>(this.articulosUrl).pipe(tap(_ => this.log(`Todos los artículos`)),catchError(this.handleError<Articulo[]>('getArticulos', [])));
+  return this.http.get<Articulo[]>(this.articulosUrl).pipe(
+    tap(_ =>this.mensajeService.add({texto:`Todos los artículos`, nivel:"success"})),
+    catchError(()=>{this.mensajeService.add({texto:`Error al obtener los productos`, nivel:"danger"})
+  return [];
+ }));
 }
 
 httpOptions = {
@@ -31,41 +40,34 @@ httpOptions = {
 
 addArticulo(articulo: Articulo): Observable<Articulo> {
   return this.http.post<Articulo>(this.articulosUrl, articulo, this.httpOptions).pipe(
-    tap((newArticulo: Articulo) => this.log(`Articulo añadido con id=${newArticulo.id}`)),
-    catchError(this.handleError<Articulo>('addArticulo'))
+    tap(_ => this.mensajeService.add({ texto: 'Artículo ' + articulo.name +' añadido con éxito', nivel: 'success' })),
+    catchError(() => {
+      this.mensajeService.add({ texto: 'Error al insertar el artículo ' + articulo.name, nivel: 'danger' })
+      return [];
+    })
   );
 }
 
 updateArticulo(articulo: Articulo) {
-  return this.http.put(this.articulosUrl + articulo.id, articulo, this.httpOptions);
-
+  return this.http.put(this.articulosUrl + articulo.id, articulo, this.httpOptions)
+  .pipe(tap(_ => this.mensajeService.add({ texto: 'Artículo ' + articulo.id +' modificado con éxito', nivel: 'success' })),
+  catchError(() => {
+    this.mensajeService.add({ texto: 'Error al actualizar el artículo ' + articulo.id, nivel: 'danger' })
+    return [];
+  })
+);
 }
 
 deleteArticulo(id: number): Observable<Articulo> {
   const url = `${this.articulosUrl}/${id}`;
-  return this.http.delete<Articulo>(url, this.httpOptions).pipe(tap
-    (_ => this.log(`id de artículo borrado=${id}`)),
-    catchError(this.handleError<Articulo>('deleteArticulo'))
-  );
- }
-
- private handleError<T>(operation = 'operation', result?: T) {
-  return (error: any): Observable<T> => {
-
-    // TODO: send the error to remote logging infrastructure
-    console.error(error); // log to console instead
-
-    // TODO: better job of transforming error for user consumption
-    this.log(`${operation} failed: ${error.message}`);
-
-    // Let the app keep running by returning an empty result.
-    return of(result as T);
-  };
+  return this.http.delete<Articulo>(url, this.httpOptions).pipe(
+    tap(_ => this.mensajeService.add({ texto: 'Artículo ' + id +' borrado con éxito', nivel: 'success' })),
+  catchError(() => {
+    this.mensajeService.add({ texto: 'Error al borrar el artículo ' + id, nivel: 'danger' })
+    return [];
+  })
+);
 }
-/** Log a ArticuloService message with the MessageService */
-private log(mensaje: string) {
-  this.mensajeService.add(`ArticuloService: ${mensaje}`);
-  } 
 
   searchArticulo(term: string): Observable<Articulo[]> {
     if (!term.trim()||term ==null || term==""|| term==" "||!term || term == "borrar" || term == "actualizar") {
@@ -75,9 +77,8 @@ private log(mensaje: string) {
     }
     return this.http.get<Articulo[]>(`${this.articulosUrl}/?name_like=${term}`).pipe(
       tap(x => x.length ?
-         this.log(`Artículo(s) encontrado(s) "${term}"`) :
-         this.log(`Artículo(s) no encontrado(s) "${term}"`)),
-      catchError(this.handleError<Articulo[]>('searchArticulos', []))
-    );
+        this.mensajeService.add({ texto: 'Se han encontrado '+x.length+' artículos que incluyen el término '+term, nivel: 'success' }) :
+        this.mensajeService.add({ texto: 'Se han encontrado '+x.length+' artículos que incluyen el término '+term, nivel: 'warning' })
+    ));
   }
 }

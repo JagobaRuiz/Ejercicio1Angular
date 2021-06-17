@@ -2,10 +2,6 @@
     text-align: center;
 }
 
-button{
-    background-color: black;
-}
-
-.carousel-control-prev-icon{
-    color: black;
+#guardar{
+    margin-right: 5px;
 }

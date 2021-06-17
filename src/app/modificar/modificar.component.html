@@ -11,6 +11,6 @@
         <input class="form-label" id="articulo-precio" [(ngModel)]="articulo.precio" placeholder="precio">
         <br>
     </div>
-    <button (click)="save()">save</button>
-    <button class="carousel-control-prev-icon" (click)="goBack()"></button>
+    <button id="guardar" class="btn-primary" (click)="save()">Guardar cambios</button>
+    <button class="btn-warning" (click)="goBack()">Volver sin guardar</button>
 </div>
