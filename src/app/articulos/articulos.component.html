@@ -1,34 +1,36 @@
 <div id="buscar-component">
-  <label for="search-box">Buscar artículo </label>
+  <label for="search-box">Buscar artículo &nbsp; </label>
   <input #searchBox id="search-box" (input)="search(searchBox.value)" />
-<table class="articulos">
-  
+<table class="table table-hover table-striped table-bordered">
+  <thead class="table-dark">
     <tr>
         <th id="thid">Id</th>
         <th id="thnom">Nombre</th>
         <th  id="thprec">Precio</th>
         <th  id="thopc">Opciones</th>
     </tr>
-
+  </thead>
+<tbody>
     <tr class= "contenido" *ngFor="let articulo of articulos$ | async">
       <td class="id">{{articulo.id}}</td>
       <td class="nombre">{{articulo.name}}</td>
       <td class="precio">{{articulo.precio}}€</td>
-      <td><button class="delete" title="borrar" (click)=delete(articulo)>Borrar</button>
-        <button class="edit" title="Editar" routerLink="/modificar/{{articulo.id}}">Editar</button></td>
+      <td><button id="delete" class="btn btn-danger" title="borrar" (click)=delete(articulo)>Borrar</button>
+        <button id="edit" class="btn btn-primary" title="Editar" routerLink="/modificar/{{articulo.id}}">Editar</button></td>
     </tr>
+  </tbody>
 </table>
 <br>
 <h3>Añadir nuevo artículo</h3>
 
 <div id="formu">
-    <label for="name-new-articulo">Nombre del artículo: </label>
-    <input id="name-new-articulo" #articuloName/><br>
-    <label for="precio-new-articulo">Precio del artículo: </label>
-    <input id="precio-new-articulo" #articuloPrecio/><br>
+    <label class="form-label" for="name-new-articulo">Nombre del artículo: </label>
+    <input class="form-control" id="name-new-articulo" #articuloName/><br>
+    <label class="form-label" for="precio-new-articulo">Precio del artículo: </label>
+    <input class="form-control" id="precio-new-articulo" #articuloPrecio/><br>
   
     <!-- (click) passes input value to add() and then clears the input -->
-    <button class="add-button" (click)="add(articuloName.value, +articuloPrecio.value);">
+    <button  class="btn btn-primary" class="add-button" (click)="add(articuloName.value, +articuloPrecio.value);">
       Añadir artículo
     </button>
     

@@ -37,7 +37,8 @@ addArticulo(articulo: Articulo): Observable<Articulo> {
 }
 
 updateArticulo(articulo: Articulo) {
-  return this.http.put(this.articulosUrl + articulo.id, articulo);
+  return this.http.put(this.articulosUrl + articulo.id, articulo, this.httpOptions);
+
 }
 
 deleteArticulo(id: number): Observable<Articulo> {
@@ -72,7 +73,7 @@ private log(mensaje: string) {
       term = "hecho";
       return this.getArticulos();
     }
-    return this.http.get<Articulo[]>(`${this.articulosUrl}/?name=${term}`).pipe(
+    return this.http.get<Articulo[]>(`${this.articulosUrl}/?name_like=${term}`).pipe(
       tap(x => x.length ?
          this.log(`Artículo(s) encontrado(s) "${term}"`) :
          this.log(`Artículo(s) no encontrado(s) "${term}"`)),

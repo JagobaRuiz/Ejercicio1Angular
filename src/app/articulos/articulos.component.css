@@ -52,6 +52,7 @@ label, input{
 
 .add-button{
     margin-left: 30px;
+    
 }
 
 .contenido:hover{
@@ -60,7 +61,7 @@ background-color: rgb(223, 240, 75);
 }
 
 button:active{
-    background-color: crimson;
+    /* background-color: crimson; */
     border-radius: 80%;
 }
 
@@ -70,4 +71,20 @@ button:active{
 
 #name-new-articulo, #precio-new-articulo{
     text-align: left;
+    width: 300px;
+    margin-left: 530px;
+    align-items: center;
+}
+
+#formu{
+    text-align: center;
+}
+
+#search-box{
+    text-align: left;
+}
+
+#delete{
+    margin-right: 5px;
+
 }
